@@ -12,7 +12,7 @@
       name: 'nắng hồng',
       price: 300000,
       img: 'assets/flowers/hoa-5.webp',
-      tone: 'tim', toneLabel: 'Tông tím', toneColor: '#cdb8ec',
+      tone: 'hong', toneLabel: 'Tông hồng', toneColor: '#f5b3c7',
       badge: 'Bán chạy',
       short: 'Hồng tím, cúc hoạ mi, tờ báo cài bên trong.',
       desc: 'Những bông hồng tím nhạt đan cùng cúc hoạ mi và cỏ lau hồng, thêm tờ báo cổ điển cài phía sau. Hợp tặng người thương vào ngày kỷ niệm.',
@@ -243,10 +243,10 @@
     g.beginPath(); g.arc(0, 0, S * 0.045, 0, 7); g.fill();
   });
   const BLOSSOMS = [
-    blossom('#f29fb5', '#fbd3dd'),
-    blossom('#f7bfcd', '#fde6ec'),
-    blossom('#e58aa4', '#f8c4d1'),
-    blossom('#d9c4f2', '#f1e8fb'),
+    blossom('#e8678f', '#f9b8cb'),
+    blossom('#f08fae', '#fcd5e1'),
+    blossom('#d95b85', '#f5a9c0'),
+    blossom('#b58ce8', '#e7d8fb'),
   ];
   const BUD = makeSprite(40, (g, S) => {
     const grad = g.createRadialGradient(S * 0.45, S * 0.4, 1, S / 2, S / 2, S * 0.4);
@@ -254,18 +254,18 @@
     g.fillStyle = grad;
     g.beginPath(); g.ellipse(S / 2, S / 2, S * 0.26, S * 0.36, 0, 0, 7); g.fill();
   });
-  const sparkle = color => makeSprite(64, (g, S) => {
+  const sparkle = (color, core) => makeSprite(64, (g, S) => {
     const c = S / 2;
     const glow = g.createRadialGradient(c, c, 0, c, c, c);
-    glow.addColorStop(0, color); glow.addColorStop(0.18, color + '88'); glow.addColorStop(1, color + '00');
+    glow.addColorStop(0, color + 'cc'); glow.addColorStop(0.22, color + '55'); glow.addColorStop(1, color + '00');
     g.fillStyle = glow; g.fillRect(0, 0, S, S);
-    g.fillStyle = '#ffffff';
+    g.fillStyle = core;
     g.beginPath(); // ngôi sao 4 cánh
     g.moveTo(c, 2); g.quadraticCurveTo(c, c, S - 2, c); g.quadraticCurveTo(c, c, c, S - 2);
     g.quadraticCurveTo(c, c, 2, c); g.quadraticCurveTo(c, c, c, 2);
     g.fill();
   });
-  const SPARKS = [sparkle('#ffffff'), sparkle('#ffd1dc'), sparkle('#ffe9a8'), sparkle('#e6d9ff')];
+  const SPARKS = [sparkle('#ff8fb1', '#ffffff'), sparkle('#f2b84b', '#fff7dc'), sparkle('#b98ae6', '#ffffff'), sparkle('#ff7fa6', '#ffe6ee')];
 
   /* ----- cành hoa: sinh cấu trúc cố định (seeded) ----- */
   let seed = 7;
@@ -291,7 +291,7 @@
     branches = [{
       // cành rủ từ góc phải trên
       x: W + 6, y: H * (mobile ? 0.1 : 0.14), rot: Math.PI - 0.28, sign: 1,
-      alpha: mobile ? 0.5 : 0.9,
+      alpha: mobile ? 0.6 : 0.95,
       root: grow(0, m * (mobile ? 0.15 : 0.12), 0, mobile ? 5 : 6, -0.12),
     }];
     if (!mobile) branches.push({
@@ -307,7 +307,7 @@
     bctx.save();
     bctx.rotate(node.angle + sway);
     // thân cành hơi cong
-    bctx.strokeStyle = '#6b5446';
+    bctx.strokeStyle = '#c49199';
     bctx.lineWidth = node.w;
     bctx.lineCap = 'round';
     bctx.beginPath();
@@ -319,7 +319,7 @@
       bctx.save();
       bctx.translate(node.len * 0.5, 0);
       bctx.rotate(-0.9 + Math.sin(time * 2 + node.phase) * 0.15 * (1 + gust));
-      bctx.fillStyle = '#7fa874';
+      bctx.fillStyle = '#a9cba2';
       bctx.beginPath();
       bctx.moveTo(0, 0); bctx.quadraticCurveTo(8, -9, 20, 0); bctx.quadraticCurveTo(8, 9, 0, 0);
       bctx.fill();
@@ -339,10 +339,10 @@
   };
 
   /* ----- cánh hoa rơi ----- */
-  const COLORS = ['#f5c3cf', '#f8d6de', '#e89aae', '#cdb8ec', '#fff1f4'];
-  const LEAF_COLORS = ['#6f9a6a', '#8fb585', '#4f7a55'];
+  const COLORS = ['#f7a8c0', '#ffffff', '#f28bab', '#d4bdf5', '#ffd0dc'];
+  const LEAF_COLORS = ['#b9d4ae', '#a9cba2', '#ffffff'];
   const spawn = (initial, fromBranch) => {
-    const leaf = !fromBranch && Math.random() < 0.28;
+    const leaf = !fromBranch && Math.random() < 0.15;
     return {
       leaf,
       x: fromBranch ? W - Math.random() * W * 0.35 : Math.random() * W,
@@ -356,7 +356,7 @@
       phase: Math.random() * Math.PI * 2,
       flip: Math.random() * Math.PI * 2,
       c: leaf ? LEAF_COLORS[(Math.random() * LEAF_COLORS.length) | 0] : COLORS[(Math.random() * COLORS.length) | 0],
-      a: 0.3 + Math.random() * 0.45,
+      a: 0.5 + Math.random() * 0.4,
     };
   };
   const drawPetal = p => {
@@ -453,7 +453,6 @@
     if (Math.random() < 0.06) addSpark(Math.random() * W, Math.random() * H, false);
     const burst = Math.min(Math.abs(scrollDy) / 10, 7);
     for (let i = 0; i < burst; i++) addSpark(Math.random() * W, Math.random() * H, Math.random() < 0.3);
-    ctx.globalCompositeOperation = 'lighter';
     for (let i = sparks.length - 1; i >= 0; i--) {
       const s = sparks[i];
       s.life++;
@@ -468,7 +467,6 @@
       ctx.drawImage(s.img, -size / 2, -size / 2, size, size);
       ctx.restore();
     }
-    ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = 1;
 
     requestAnimationFrame(tick);
