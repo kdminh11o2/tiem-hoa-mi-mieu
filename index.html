@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tiệm Hoa Mĩ Miều</title>
+  <meta name="description" content="Tiệm hoa mĩ miều – những bó hoa nhỏ xinh, gói ghém dịu dàng cho người thương.">
+  <meta name="theme-color" content="#0d1812">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ INTRO: cành hoa mọc lên rồi mở màn ============ -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <svg class="intro-art" viewBox="0 0 200 240" fill="none">
+      <path class="intro-stem" d="M100 232 C 96 190, 108 160, 100 118" />
+      <path class="intro-leaf l1" d="M101 190 C 80 182, 66 166, 64 150 C 84 154, 98 168, 101 190 Z" />
+      <path class="intro-leaf l2" d="M99 166 C 120 160, 134 146, 138 128 C 116 132, 102 146, 99 166 Z" />
+      <g class="intro-bloom">
+        <ellipse class="petal" cx="100" cy="92" rx="13" ry="22" />
+        <ellipse class="petal" cx="100" cy="92" rx="13" ry="22" transform="rotate(72 100 110)" />
+        <ellipse class="petal" cx="100" cy="92" rx="13" ry="22" transform="rotate(144 100 110)" />
+        <ellipse class="petal" cx="100" cy="92" rx="13" ry="22" transform="rotate(216 100 110)" />
+        <ellipse class="petal" cx="100" cy="92" rx="13" ry="22" transform="rotate(288 100 110)" />
+        <circle class="pistil" cx="100" cy="110" r="9" />
+      </g>
+    </svg>
+    <p class="intro-brand"><span>tiệm hoa</span><strong>mĩ miều</strong></p>
+  </div>
+
+  <!-- ============ NỀN: lá rủ + cánh hoa rơi ============ -->
+  <div class="scene" aria-hidden="true">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+    <canvas id="branch"></canvas>
+    <svg class="leafy leafy-left" viewBox="0 0 300 600">
+      <path class="vine" d="M20 0 C 60 120, 10 220, 70 330 C 120 420, 60 500, 90 600" />
+      <g class="leaf-set">
+        <path d="M44 90 C 90 70, 130 90, 150 130 C 100 140, 60 120, 44 90 Z" />
+        <path d="M40 200 C 0 180, -20 150, -10 110 C 30 130, 44 160, 40 200 Z" />
+        <path d="M72 300 C 120 290, 160 310, 175 350 C 125 360, 88 340, 72 300 Z" />
+        <path d="M84 430 C 44 420, 20 390, 20 350 C 60 370, 82 396, 84 430 Z" />
+        <path d="M86 520 C 130 510, 165 530, 180 570 C 132 578, 96 560, 86 520 Z" />
+      </g>
+    </svg>
+    <svg class="leafy leafy-right" viewBox="0 0 300 600">
+      <path class="vine" d="M280 0 C 240 110, 290 230, 230 330 C 190 410, 250 500, 220 600" />
+      <g class="leaf-set">
+        <path d="M262 80 C 214 66, 176 88, 160 128 C 210 134, 248 114, 262 80 Z" />
+        <path d="M262 210 C 300 190, 320 160, 312 120 C 272 140, 258 170, 262 210 Z" />
+        <path d="M236 320 C 188 312, 150 334, 136 372 C 186 380, 222 360, 236 320 Z" />
+        <path d="M226 450 C 266 440, 290 410, 290 370 C 250 390, 228 416, 226 450 Z" />
+      </g>
+    </svg>
+  </div>
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav-wrap">
+    <nav class="nav glass" aria-label="Điều hướng chính">
+      <a class="brand" href="#top" aria-label="Tiệm hoa mĩ miều – về đầu trang">
+        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+          <g fill="currentColor">
+            <circle cx="12" cy="6" r="4"/><circle cx="17.7" cy="10.1" r="4"/><circle cx="15.5" cy="16.9" r="4"/>
+            <circle cx="8.5" cy="16.9" r="4"/><circle cx="6.3" cy="10.1" r="4"/>
+          </g>
+          <circle cx="12" cy="12" r="3.2" fill="#f6d77a"/>
+        </svg>
+        <span class="brand-text"><small>tiệm hoa</small>mĩ miều</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#mau-hoa">Mẫu hoa</a></li>
+        <li><a href="#ve-tiem">Về tiệm</a></li>
+        <li><a href="#cam-nhan">Cảm nhận</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+      <a class="btn btn-pill" href="#lien-he">Nhắn tiệm</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow reveal-up" style="--d:0">Tiệm hoa nhỏ · gói bằng cả trái tim</p>
+        <h1 class="hero-title" aria-label="Gói một chút dịu dàng, gửi người thương mĩ miều.">
+          <span class="line"><span class="word">Gói</span> <span class="word">một</span> <span class="word">chút</span></span>
+          <span class="line"><em class="word">dịu dàng,</em></span>
+          <span class="line"><span class="word">gửi</span> <span class="word">người</span> <span class="word">thương</span></span>
+          <span class="line"><span class="word script">mĩ miều.</span></span>
+        </h1>
+        <p class="hero-sub reveal-up" style="--d:6">Mỗi bó hoa ở tiệm đều được chọn từng bông, gói từng lớp giấy, để thay bạn nói những điều khó nói thành lời.</p>
+        <div class="hero-cta reveal-up" style="--d:7">
+          <a class="btn btn-primary" href="#mau-hoa">
+            Xem mẫu hoa
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4.5 10.5 10 16l5.5-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost glass" href="#lien-he">Đặt hoa theo ý</a>
+        </div>
+        <dl class="hero-stats reveal-up" style="--d:8">
+          <div><dt>Giá chỉ từ</dt><dd>150.000 đồng</dd></div>
+          <div><dt>Gói xong trong</dt><dd>2 giờ</dd></div>
+          <div><dt>Thiệp viết tay</dt><dd>Miễn phí</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-halo"></div>
+        <svg class="hero-ring" viewBox="0 0 400 400" aria-hidden="true">
+          <circle cx="200" cy="200" r="190" />
+          <circle cx="200" cy="200" r="160" />
+        </svg>
+        <figure class="hero-feature glass tilt">
+          <img class="hero-bouquet" src="assets/flowers/hoa-5.webp" alt="Bó hoa hồng tím Thư Tình Tím" width="600" height="900">
+          <figcaption>
+            <span class="tag">Được yêu thích nhất</span>
+            <strong>Thư Tình Tím</strong>
+            <span class="price">300.000 đồng</span>
+          </figcaption>
+        </figure>
+        <div class="float-chip glass chip-a">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21Z" fill="currentColor"/></svg>
+          <span>1.200+ bó hoa đã trao đi</span>
+        </div>
+        <div class="float-chip glass chip-b">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span>4.9 trên Google</span>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#mau-hoa" aria-label="Cuộn xuống xem mẫu hoa"><span></span></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee glass" aria-hidden="true">
+      <div class="marquee-inner">
+      <div class="marquee-track">
+        <span>Bó tay tỉ mỉ</span><i>✿</i><span>Gói theo yêu cầu</span><i>✿</i><span>Thiệp viết tay miễn phí</span><i>✿</i><span>Giao nhanh nội thành</span><i>✿</i><span>Hoa giữ dáng lâu</span><i>✿</i>
+        <span>Bó tay tỉ mỉ</span><i>✿</i><span>Gói theo yêu cầu</span><i>✿</i><span>Thiệp viết tay miễn phí</span><i>✿</i><span>Giao nhanh nội thành</span><i>✿</i><span>Hoa giữ dáng lâu</span><i>✿</i>
+      </div>
+      </div>
+    </div>
+
+    <!-- ============ BỘ SƯU TẬP ============ -->
+    <section class="section" id="mau-hoa">
+      <div class="section-head">
+        <h2 class="framed-title reveal">Mẫu hoa của tiệm</h2>
+        <p class="section-lead reveal">Chạm vào từng bó để xem kỹ hơn. Mẫu nào ưng, nhắn tiệm một câu là xong.</p>
+        <div class="filters glass reveal" role="tablist" aria-label="Lọc theo tông màu">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">Tất cả</button>
+          <button class="chip" data-filter="hong" role="tab" aria-selected="false">Tông hồng</button>
+          <button class="chip" data-filter="tim" role="tab" aria-selected="false">Tông tím</button>
+          <button class="chip" data-filter="xanh" role="tab" aria-selected="false">Tông xanh</button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"><!-- JS render --></div>
+    </section>
+
+    <!-- ============ VỀ TIỆM ============ -->
+    <section class="section about" id="ve-tiem">
+      <div class="section-head">
+        <h2 class="framed-title reveal">Điều nhỏ làm nên mĩ miều</h2>
+      </div>
+      <div class="about-grid">
+        <article class="about-card glass reveal">
+          <div class="about-icon">
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34c0-8 0-14-2-20M20 22c-5-1-9-5-10-11 6 0 10 4 10 11Zm0-3c4-2 7-6 7-11-5 1-8 5-7 11Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Chọn từng bông</h3>
+          <p>Mỗi bông hoa đều được tiệm tự tay chọn, xếp theo tông màu để bó hoa trông mềm mại và có hồn.</p>
+        </article>
+        <article class="about-card glass reveal">
+          <div class="about-icon">
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 14h24v18H8zM6 10h28v4H6zM20 10v22M20 10c-3-5-9-5-8-1 1 3 8 1 8 1Zm0 0c3-5 9-5 8-1-1 3-8 1-8 1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Gói theo câu chuyện</h3>
+          <p>Kể tiệm nghe người nhận là ai, thích màu gì. Tiệm sẽ chọn giấy, chọn nơ cho vừa vặn câu chuyện của bạn.</p>
+        </article>
+        <article class="about-card glass reveal">
+          <div class="about-icon">
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 11h26v18H7zM7 12l13 10 13-10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Thiệp viết tay</h3>
+          <p>Lời nhắn được viết tay nắn nót trên thiệp nhỏ, tặng kèm mọi bó hoa, không tính thêm phí.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CẢM NHẬN ============ -->
+    <section class="section" id="cam-nhan">
+      <div class="section-head">
+        <h2 class="framed-title reveal">Khách thương tiệm nói gì</h2>
+      </div>
+      <div class="reviews">
+        <figure class="review glass reveal">
+          <div class="review-head">
+            <span class="avatar" style="--hue:340">T</span>
+            <div><strong>Thu Trang</strong><span class="stars">★★★★★</span></div>
+          </div>
+          <blockquote>Đặt bó Kẹo Bông Gòn tặng bạn thân, ngoài đời còn xinh hơn ảnh. Giấy gói mềm, màu hồng pastel nhìn là muốn ôm luôn.</blockquote>
+        </figure>
+        <figure class="review glass reveal">
+          <div class="review-head">
+            <span class="avatar" style="--hue:140">M</span>
+            <div><strong>Minh Khôi</strong><span class="stars">★★★★★</span></div>
+          </div>
+          <blockquote>Mình không rành hoa, chỉ kể là tặng mẹ. Tiệm tư vấn rất có tâm, còn viết thiệp giúp mình. Mẹ khen mãi.</blockquote>
+        </figure>
+        <figure class="review glass reveal">
+          <div class="review-head">
+            <span class="avatar" style="--hue:280">A</span>
+            <div><strong>Hải Anh</strong><span class="stars">★★★★★</span></div>
+          </div>
+          <blockquote>Bó Thư Tình Tím đúng kiểu mình mê: tím nhẹ, có tờ báo tiếng Anh cài bên trong, chụp ảnh lên hình cực sang.</blockquote>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band glass reveal">
+      <svg class="cta-sprig" viewBox="0 0 120 120" aria-hidden="true">
+        <path d="M20 110 C 40 80, 60 60, 100 20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M45 78 C 30 70, 26 56, 30 46 C 42 54, 46 66, 45 78Z M60 62 C 76 60, 86 50, 88 38 C 74 40, 64 50, 60 62Z M76 44 C 66 34, 66 22, 72 14 C 80 24, 80 36, 76 44Z" fill="currentColor" opacity=".7"/>
+      </svg>
+      <div>
+        <h2>Chưa thấy mẫu ưng ý?</h2>
+        <p>Nhắn tiệm màu sắc, dịp tặng và ngân sách. Tiệm sẽ phác một bó riêng chỉ dành cho bạn.</p>
+      </div>
+      <a class="btn btn-primary" href="#lien-he">Nhắn tiệm ngay</a>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="lien-he">
+    <div class="footer-inner glass">
+      <div class="footer-brand">
+        <p class="footer-logo"><small>tiệm hoa</small>mĩ miều</p>
+        <p class="footer-slogan">Gói một chút dịu dàng, gửi người thương mĩ miều.</p>
+        <div class="socials">
+          <a class="social glass" href="https://www.instagram.com/tiemhoa.mimieu/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
+          </a>
+          <a class="social glass" href="https://facebook.com/tiemhoamimieu" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3Z" fill="currentColor"/></svg>
+          </a>
+          <a class="social glass" href="https://tiktok.com/@tiemhoamimieu" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3c.3 2.3 1.6 3.8 4 4v3c-1.5.1-2.8-.4-4-1.2v6.1c0 3.7-3.2 6.2-6.7 5.4-4.3-1-5.2-6.6-1.5-8.8 1-.6 2.3-.9 3.6-.7v3.2c-.4-.1-.9-.2-1.3-.1-1.8.3-2.4 2.6-.9 3.6 1.4 1 3.5.1 3.5-2V3h3.3Z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Ghé tiệm</h3>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=88+Tr%E1%BA%A7n+H%C6%B0ng+%C4%90%E1%BA%A1o%2C+Ninh+Ki%E1%BB%81u%2C+C%E1%BA%A7n+Th%C6%A1" target="_blank" rel="noopener">88 Trần Hưng Đạo,<br>Ninh Kiều, Cần Thơ</a></p>
+        <p class="muted">Mở cửa 8:00 – 21:00, tất cả các ngày</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Liên hệ</h3>
+        <p><span class="muted">Hotline / Zalo</span><br><a href="tel:0901234567">0901 234 567</a></p>
+        <p><span class="muted">Email</span><br><a href="mailto:hello@tiemhoamimieu.vn">hello@tiemhoamimieu.vn</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Theo dõi tiệm</h3>
+        <ul class="footer-list">
+          <li><a href="https://www.instagram.com/tiemhoa.mimieu/" target="_blank" rel="noopener">Instagram · @tiemhoa.mimieu</a></li>
+          <li><a href="https://facebook.com/tiemhoamimieu" target="_blank" rel="noopener">Facebook · Tiệm Hoa Mĩ Miều</a></li>
+          <li><a href="https://tiktok.com/@tiemhoamimieu" target="_blank" rel="noopener">TikTok · @tiemhoamimieu</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Tiệm hoa mĩ miều. Làm bằng hoa và một chút thương.</p>
+  </footer>
+
+  <!-- ============ MODAL CHI TIẾT ============ -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close glass" data-close aria-label="Đóng">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-media"><img id="modal-img" src="" alt=""></div>
+      <div class="modal-body">
+        <p class="eyebrow" id="modal-tone"></p>
+        <h3 id="modal-title"></h3>
+        <p class="modal-price" id="modal-price"></p>
+        <p id="modal-desc"></p>
+        <ul class="modal-meta" id="modal-meta"></ul>
+        <div class="modal-actions">
+          <a class="btn btn-primary" href="https://m.me/tiemhoamimieu" target="_blank" rel="noopener">Nhắn tiệm đặt mẫu này</a>
+          <a class="btn btn-ghost glass" href="tel:0901234567">Gọi 0901 234 567</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

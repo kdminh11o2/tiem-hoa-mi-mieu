@@ -1,0 +1,5 @@
+# Ảnh gốc & ảnh tham khảo (web chỉ dùng bản .webp đã cắt nền)
+/*.jpg
+assets/flowers/*.png
+# Cấu hình cục bộ
+.claude/
