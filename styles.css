@@ -156,7 +156,7 @@ body.is-loading { overflow: hidden; }
   opacity: 0; transform: translateY(12px);
   animation: rise .9s 1.4s var(--ease-out) forwards;
 }
-.intro-brand span { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-soft); }
+.intro-brand span { font-size: 16px; letter-spacing: .08em; color: var(--ink-soft); }
 .intro-brand strong { font-family: var(--f-script); font-weight: 700; font-size: clamp(44px, 9vw, 64px); color: var(--ink); margin-top: 4px; }
 
 @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -233,7 +233,7 @@ body.is-ready .nav { transform: none; transition-delay: .3s; }
 .brand-mark { width: 26px; height: 26px; color: var(--blush); animation: turn 14s linear infinite; }
 @keyframes turn { to { transform: rotate(360deg); } }
 .brand-text { display: grid; line-height: .9; font-family: var(--f-script); font-weight: 700; font-size: 25px; }
-.brand-text small { font-family: var(--f-body); font-weight: 400; font-size: 9.5px; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 2px; }
+.brand-text small { font-family: var(--f-body); font-weight: 400; font-size: 11.5px; letter-spacing: .06em; color: var(--ink-soft); margin-bottom: 1px; }
 .nav-links { list-style: none; margin: 0 auto; padding: 0; display: flex; gap: 4px; }
 .nav-links a { display: block; padding: 8px 14px; border-radius: 999px; font-size: 14px; color: var(--ink-soft); transition: color .25s, background .25s; }
 .nav-links a:hover { color: var(--ink); background: rgba(255,255,255,.08); }
@@ -628,7 +628,7 @@ body.is-ready .chip-b { animation: rise .8s 1.3s var(--ease-out) forwards, bob 5
   --shine: .35;
 }
 .footer-logo { display: grid; line-height: .9; font-family: var(--f-script); font-weight: 700; font-size: 44px; }
-.footer-logo small { font-family: var(--f-body); font-size: 11px; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 4px; }
+.footer-logo small { font-family: var(--f-body); font-size: 14px; font-weight: 400; letter-spacing: .06em; color: var(--ink-soft); margin-bottom: 2px; }
 .footer-slogan { color: var(--ink-soft); margin-top: 12px; font-family: var(--f-display); font-style: italic; max-width: 28ch; }
 .socials { display: flex; gap: 10px; margin-top: 20px; }
 .social { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; transition: transform .4s var(--ease-spring), color .3s; }
