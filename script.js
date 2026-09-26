@@ -8,8 +8,8 @@
   /* ---------- Dữ liệu mẫu hoa (sửa tên / giá / mô tả tại đây) ---------- */
   const FLOWERS = [
     {
-      id: 'thu-tinh-tim',
-      name: 'thư tình tím',
+      id: 'nang-hong',
+      name: 'nắng hồng',
       price: 300000,
       img: 'assets/flowers/hoa-5.webp',
       tone: 'tim', toneLabel: 'Tông tím', toneColor: '#cdb8ec',
@@ -29,8 +29,8 @@
       meta: ['Hồng loang, cẩm chướng, môn hồng', 'Giấy nhăn hồng + ruy băng “Best wishes”', 'Cao khoảng 45 cm'],
     },
     {
-      id: 'no-hong-thieu-nu',
-      name: 'nơ hồng thiếu nữ',
+      id: 'no-hong',
+      name: 'nơ hồng',
       price: 250000,
       img: 'assets/flowers/hoa-3.webp',
       tone: 'hong', toneLabel: 'Tông hồng', toneColor: '#f5c3cf',
@@ -40,8 +40,8 @@
       meta: ['Hồng phấn, lan, sao xanh', 'Giấy tổ ong trắng + nơ hồng', 'Cao khoảng 45 cm'],
     },
     {
-      id: 'som-mai-xanh',
-      name: 'sớm mai xanh',
+      id: 'thu-xanh',
+      name: 'thu xanh',
       price: 260000,
       img: 'assets/flowers/hoa-1.webp',
       tone: 'xanh', toneLabel: 'Tông xanh', toneColor: '#a8c79b',
