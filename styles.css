@@ -594,6 +594,7 @@ body.is-ready .chip-b { animation: rise .8s 1.3s var(--ease-out) forwards, bob 5
   box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
 }
 .review blockquote { margin: 0; color: var(--ink-soft); font-size: 15px; }
+.review blockquote em { font-family: var(--f-display); color: var(--blush); }
 
 /* =========================================================
    CTA
@@ -629,7 +630,7 @@ body.is-ready .chip-b { animation: rise .8s 1.3s var(--ease-out) forwards, bob 5
 }
 .footer-logo { display: grid; line-height: .9; font-family: var(--f-script); font-weight: 700; font-size: 44px; }
 .footer-logo small { font-family: var(--f-body); font-size: 14px; font-weight: 400; letter-spacing: .06em; color: var(--ink-soft); margin-bottom: 2px; }
-.footer-slogan { color: var(--ink-soft); margin-top: 12px; font-family: var(--f-display); font-style: italic; max-width: 28ch; }
+.footer-slogan { color: var(--ink-soft); margin-top: 12px; font-family: var(--f-display); font-style: italic; }
 .socials { display: flex; gap: 10px; margin-top: 20px; }
 .social { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; transition: transform .4s var(--ease-spring), color .3s; }
 .social svg { width: 20px; height: 20px; }

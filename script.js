@@ -9,7 +9,7 @@
   const FLOWERS = [
     {
       id: 'thu-tinh-tim',
-      name: 'Thư Tình Tím',
+      name: 'thư tình tím',
       price: 300000,
       img: 'assets/flowers/hoa-5.webp',
       tone: 'tim', toneLabel: 'Tông tím', toneColor: '#cdb8ec',
@@ -20,7 +20,7 @@
     },
     {
       id: 'keo-bong-gon',
-      name: 'Kẹo Bông Gòn',
+      name: 'kẹo bông gòn',
       price: 220000,
       img: 'assets/flowers/hoa-2.webp',
       tone: 'hong', toneLabel: 'Tông hồng', toneColor: '#f5c3cf',
@@ -30,7 +30,7 @@
     },
     {
       id: 'no-hong-thieu-nu',
-      name: 'Nơ Hồng Thiếu Nữ',
+      name: 'nơ hồng thiếu nữ',
       price: 250000,
       img: 'assets/flowers/hoa-3.webp',
       tone: 'hong', toneLabel: 'Tông hồng', toneColor: '#f5c3cf',
@@ -41,7 +41,7 @@
     },
     {
       id: 'som-mai-xanh',
-      name: 'Sớm Mai Xanh',
+      name: 'sớm mai xanh',
       price: 260000,
       img: 'assets/flowers/hoa-1.webp',
       tone: 'xanh', toneLabel: 'Tông xanh', toneColor: '#a8c79b',
@@ -51,7 +51,7 @@
     },
     {
       id: 'may-hong',
-      name: 'Mây Hồng',
+      name: 'mây hồng',
       price: 180000,
       img: 'assets/flowers/hoa-4.webp',
       tone: 'hong', toneLabel: 'Tông hồng', toneColor: '#f5c3cf',
@@ -61,7 +61,7 @@
     },
     {
       id: 'banh-dau-tay',
-      name: 'Bánh Dâu Tây',
+      name: 'bánh dâu tây',
       price: 150000,
       img: 'assets/flowers/hoa-6.webp',
       tone: 'hong', toneLabel: 'Tông hồng', toneColor: '#f5c3cf',
