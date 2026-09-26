@@ -3,6 +3,7 @@
   const root = document.documentElement;
   const body = document.body;
   root.classList.add('js');
+  const ASSET_V = '20260926b'; // đổi số này mỗi lần thay ảnh để khách không thấy ảnh cũ
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Dữ liệu mẫu hoa (sửa tên / giá / mô tả tại đây) ---------- */
@@ -82,7 +83,7 @@
       aria-label="${f.name}, ${fmt(f.price)}. Xem chi tiết"
       style="--rd:${(i % 3) * 0.08}s; --sd:${-i * 1.3}s">
       ${f.badge ? `<span class="card-badge">${f.badge}</span>` : ''}
-      <div class="card-media"><img src="${f.img}" alt="Bó hoa ${f.name}" loading="lazy"></div>
+      <div class="card-media"><img src="${f.img}?v=${ASSET_V}" alt="Bó hoa ${f.name}" loading="lazy"></div>
       <div class="card-body">
         <h3>${f.name}</h3>
         <p>${f.short}</p>
@@ -119,7 +120,7 @@
     const f = FLOWERS.find(x => x.id === id);
     if (!f) return;
     lastFocus = document.activeElement;
-    document.getElementById('modal-img').src = f.img;
+    document.getElementById('modal-img').src = f.img + '?v=' + ASSET_V;
     document.getElementById('modal-img').alt = 'Bó hoa ' + f.name;
     document.getElementById('modal-title').textContent = f.name;
     document.getElementById('modal-price').textContent = fmt(f.price);

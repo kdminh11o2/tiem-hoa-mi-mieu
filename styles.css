@@ -4,7 +4,8 @@
    ========================================================= */
 
 :root {
-  color-scheme: light;
+  color-scheme: only light; /* chặn chế độ tự làm tối của trình duyệt */
+  forced-color-adjust: none;
 
   /* palette: hồng pastel công chúa */
   --bg:          #fdeef3;
